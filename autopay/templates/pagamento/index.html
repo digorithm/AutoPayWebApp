@@ -1,0 +1,145 @@
+{% extends "base/layout.html" %}
+
+{% block content %}    
+        <div class="content">
+            
+
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Cartão de Crédito</h4>
+                        <p class="category">VISA | MASTERCARD | AMEX | DINNERS | HIPERCARD</p>
+                    </div>
+                    <div class="content">                      
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox">
+                                                <input type="checkbox" value="" data-toggle="checkbox">
+                                            </label>
+                                        </td>
+                                        <td>***-****-****-7830</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Editar Dados" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remover Cartão" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox">
+                                                <input type="checkbox" value="" data-toggle="checkbox">
+                                            </label>
+                                        </td>
+                                        <td>***-****-****-5411</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Editar Dados" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remover Cartão" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                                
+                        <div class="footer">
+                                <div class="btn-toolbar pagination-centered" role="group" aria-label="...">
+                                  <button type="button" class="btn btn-primary">Adicionar Novo Cartão</button>
+                                  <button type="button" class="btn btn-deafult">Desativar Todos</button>
+                                  <button type="button" class="btn btn-danger">Remover Todos</button>
+                                </div>                               
+                        </div>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Débito em Conta</h4>
+                        <p class="category">BRADESCO | ITAÚ | BANCO DO BRASIL | SANTANDER | CAIXA | SAFRA</p>
+                    </div>
+                    <div class="content">                      
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox">
+                                                <input type="checkbox" value="" data-toggle="checkbox">
+                                            </label>
+                                        </td>
+                                        <td>Bradesco: CC ***971-4</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Editar Dados" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remover Cartão" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                                
+                        <div class="footer">
+                                <div class="btn-toolbar pagination-centered" role="group" aria-label="...">
+                                  <button type="button" class="btn btn-primary">Adicionar Nova Conta</button>
+                                  <button type="button" class="btn btn-deafult">Desativar Todas</button>
+                                  <button type="button" class="btn btn-danger">Remover Todas</button>
+                                </div>                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Crédito Pré-Pago</h4>
+                        <p class="category">BOLETO | CARTÃO DE CRÉDITO | DÉBITO EM CONTA</p>
+                    </div>
+                    <div class="content">                      
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                        <td>Seu saldo é de: R$12,55</td>
+                                        <td class="td-actions text-right">
+                                        </td>
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                                
+                        <div class="footer">
+                                <div class="btn-toolbar pagination-centered" role="group" aria-label="...">
+                                  <button type="button" class="btn btn-primary">Adicionar Créditos</button>
+                                  <button type="button" class="btn btn-default">Transferir Créditos</button>
+                                </div>                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                                
+                        
+
+
+
+      
+
+        </div>
+        
+       {% endblock %}

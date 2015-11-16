@@ -1,0 +1,79 @@
+{% extends "base/layout.html" %}
+
+{% block content %}    
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">                   
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Suporte Técnico</h4>
+                                <p class="category">Abra um chamado</p>
+                            </div>
+                            <div class="content all-icons">
+                                <div class="row">
+                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail"><a href="#"><i class="pe-7s-headphones"></i>
+                                      <br><br><a href="#">FALE COM UMA ATENDENTE</a>
+                                    </div>
+                                  </div>
+                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail"><a href="#"><i class="pe-7s-comment"></i>
+                                      <br><br><a href="#">CHAT ONLINE</a>
+                                    </div>
+                                  </div>
+                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail"><a href="#"><i class="pe-7s-mail-open-file"></i>
+                                      <br><br><a href="#">ENVIAR EMAIL</a>
+                                    </div>
+                                  </div>
+                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail"><a href="#"><i class="pe-7s-bookmarks"></i>
+                                      <br><br><a href="#">PERGUNTAS FREQUENTES</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      <form class="form-horizontal" action="" method="">
+                      <fieldset>
+                        <!-- Name input-->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="name">Nome</label>
+                          <div class="col-md-9">
+                          <input id="name" name="name" type="text" placeholder="Seu Nome" class="form-control">
+                          </div>
+                        </div>
+                      
+                        <!-- Email input-->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="email">Email</label>
+                          <div class="col-md-9">
+                            <input id="email" name="email" type="text" placeholder="Seu Email" class="form-control">
+                          </div>
+                        </div>
+                        
+                        <!-- Message body -->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="message">Mensagem</label>
+                          <div class="col-md-9">
+                            <textarea class="form-control" id="message" name="message" placeholder="Digite sua mensagem aqui" rows="5"></textarea>
+                          </div>
+                        </div>
+                        
+                        <!-- Form actions -->
+                        <div class="form-group">
+                          <div class="col-md-12 widget-right">
+                            <button type="submit" class="btn btn-default btn-md pull-right">Submit</button>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form>
+                    </div>        
+
+                </div> 
+            </div>
+
+        </div>
+        </div>
+
+       {% endblock %}
