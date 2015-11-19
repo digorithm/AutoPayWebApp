@@ -23,8 +23,7 @@ def index():
         return redirect(url_for('login'))
 
     user = User(registered_user['id'], registered_user['name'],
-                registered_user['organization'], registered_user['role'],
-                registered_user['rfid'])
+                registered_user['role'])
 
     login_user(user)
     flash('Logged in successfully')

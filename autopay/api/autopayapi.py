@@ -24,11 +24,27 @@ class AutopayClient(RESTClientJSONBase):
         req = requests.get(self.api_url+'/userauth', data=data)
         return json.loads(req.text)
 
+    def get_events_by_org_tag(self, user_id):
+        data = {'user_id': user_id}
+        req = requests.get(self.api_url+"/event", data=data)
+        return json.loads(req.text)
+
     @login_manager.user_loader
     def load_user(user_id):
         data = {'user_id': user_id}
         registered_user = json.loads(requests.get(api_url+'/user', data=data).text)
         user = User(registered_user['id'], registered_user['name'],
-                    registered_user['organization'], registered_user['role'],
-                    registered_user['rfid'])
+                    registered_user['role'])
         return user
+
+    def get_user_tags(self, user_id):
+        data = {'user_id': user_id}
+        tags = json.loads(requests.get(api_url+'/tag', data=data).text)
+
+        return tags
+
+    def create_tag(self, user_id, org_id, tag):
+        data = {'user_id': user_id,
+                'org_id': org_id,
+                'tag': tag}
+        return json.loads(requests.post(api_url+'/tag', data=data).text)

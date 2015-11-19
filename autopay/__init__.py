@@ -28,6 +28,7 @@ from views.main_view import main
 from views.historico_view import historico
 from views.login_view import login
 from views.logout_view import logout
+from views.tags_view import tags
 
 # Creating blueprint for recipe route
 app.register_blueprint(main)
@@ -38,7 +39,8 @@ app.register_blueprint(login)
 app.register_blueprint(login, url_prefix='/login')
 app.register_blueprint(logout)
 app.register_blueprint(logout, url_prefix='/logout')
-
+app.register_blueprint(tags)
+app.register_blueprint(tags, url_prefix='/tags')
 # Define the database object which is imported
 # by modules and controllers
 db = SQLAlchemy(app)

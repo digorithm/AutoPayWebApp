@@ -2,11 +2,9 @@
 
 class User():
 
-    def __init__(self, id, username, organization, role, tag=None):
+    def __init__(self, id, username, role):
         self.id = id
         self.username = username
-        self.organization = organization
-        self.tag = tag
         self.role = role
  
     def is_authenticated(self):

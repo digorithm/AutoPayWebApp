@@ -2,25 +2,23 @@
 
 {% block content %}    
         <div class="content">
-            
-
             <div class="col-md-8">
                 <div class="card ">
                     <div class="header">
                         <h4 class="title">Tags</h4>
-                        <p class="category">2 de 5 tags cadastradas</p>
                     </div>
                     <div class="content">                      
                         <div class="table-full-width">
                             <table class="table">
                                 <tbody>
+                                    {% for tag in tags %}
                                     <tr>
                                         <td>
                                             <label class="checkbox">
                                                 <input type="checkbox" value="" data-toggle="checkbox">
                                             </label>
                                         </td>
-                                        <td><strong>TAG 0081745</strong> - Associada a: <i>Bugatti Veyron (JOQ-0873)</i></td>
+                                        <td><strong>TAG {{ tag.tag }}</strong> - Associada a: <i>{{ tag.org_name }}</i></td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Editar Dados" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-edit"></i>
@@ -30,30 +28,47 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                                        </td>
-                                        <td><strong>TAG 0100936</strong> - Associada a: <i>Audi R8 (OZC-9559)</i></td>
-                                        <td class="td-actions text-right">
-                                            <button type="button" rel="tooltip" title="Editar Dados" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" title="Remover Cartão" class="btn btn-danger btn-simple btn-xs">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                        {% endfor %}
+                                        
                                 </tbody>
                             </table>
                             <hr>
                         </div>
+                        <style>
+                            .modal-backdrop {
+                              position: initial !important;
+                            }
+                            #data{
+                                padding: 20px;
+                            }
+                        </style>
+                       <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Adicionar nova tag</h4>
+                              </div>
+                              <form role="form" method="post" action="/tags">
+                              <div id="data" class="form-group">
+                                  <label for="tag">Tag</label>
+                                  <input type="text" id="tag" name="tag" class="form-control"></input>
+                                  <label for="orgid">Identificador da Organização</label>
+                                  <input type="text" id="orgid" name="orgid" class="form-control"></input>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Salvar</button>
+                              </div>
+                              </form>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal --> 
                                 
                         <div class="footer">
                                 <div class="btn-toolbar pagination-centered" role="group" aria-label="...">
-                                  <button type="button" class="btn btn-primary">Adicionar Nova Tag</button>
+                                  <button id="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Adicionar Nova Tag</button>
                                   <button type="button" class="btn btn-warning">Desativar Todas</button>
                                   <button type="button" class="btn btn-danger">Remover Todas</button>
                                 </div>                               
@@ -61,11 +76,13 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
+
+        <script>
+        function create_tag(something){
+            tag = document.getElementById("tag");
+            alert(tag.value);
+        }
+        </script>
         
        {% endblock %}
